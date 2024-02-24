@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/feed.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    {{!-- {{allPosts}} --}}
+    <div class="main-container">
+        {{!-- {{allPosts}} --}}
+        {{#each allPosts as |p|}}
+        <input type="text" value="{{p._id}}" name="id" id="{{p._id}}" style="width: 200px;">
+        <div class="container">
+            <div class="user-details">
+                <div class="profile-image" style="background-image: url({{p.username.google_img}});">
+                </div>
+                <div class="name-user" id="nameuser">{{p.username.username}} <div class="date">{{p.date}}</div>
+                </div>
+            </div>
+
+            <div class="tweet-info">
+                <div class="tweet-text">
+                    {{p.tweet}}
+                </div>
+            </div>
+            {{#if p.image}}
+            <div class="media image" style="background-image: url({{p.image}});">
+            </div>
+            {{/if}}
+            <div class="icon-container" id="big">
+                <div class="icon-div love"><button class="icon love"><i onclick="addLike('{{p._id}}')" id="{{p._id}}"
+                            class="fa-regular fa-heart love">
+                        </i></button>{{p.totallikes}}
+                </div>
+                <div class="icon-div comment"><button class="icon comment"><i onclick="addComment('{{p._id}}')"
+                            class="fa-regular fa-comment comment" id="{{p._id}}"></i></button></div>
+                <div class="icon-div retweet"><button class="icon retweet"><i class="fa-solid fa-retweet retweet"
+                            id="{{p._id}}">
+                        </i></button></div>
+                <div class="icon-div bookmark"><button class="icon bookmark"><i onclick="addSave('{{p._id}}')" class="fa-regular fa-bookmark bookmark"
+                            id="{{p._id}}"></i></button></div>
+            </div>
+        </div>
+
+
+        {{/each}}
+
+    </div>
+    {{!--
+    Username:
+    Tweet:
+    Time:
+    <img src=alt="Image">
+    <br><br><br> --}}
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>
