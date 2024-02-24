@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+}
+body{
+
+}
+
+.navbox{
+
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content:space-evenly; */
+    margin-left: 30px;
+    
+}
+.nav-item{
+    margin-left: 20px;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+}
+
+.nav-item>i
+{
+    font-size: 20px;
+
+}

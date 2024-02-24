@@ -6,11 +6,12 @@
     <title>Document</title>
    
     <link rel="stylesheet" href="/styles/signin.css">
-   
+    <link rel="stylesheet" href="/styles/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
+         {{>navbar}}
         <div class="container-1">
             <div class="nav-bar">
                 <div class="logo">
@@ -42,18 +43,18 @@
                         Continue with Apple
                     </button>
                 </div>
-                <div><button class="btn">Continue with phone number</button></div> -->
+                {{!-- <div><button class="btn">Continue with phone number</button></div> --> --}}
 
-                <div class="line"></div>
-                <div class="text">Email or username</div>
-                <div >
-                    <button class="checkbox">Email or username</button>
-                </div>
+                {{!-- <div class="line"></div> --}}
+                {{!-- <div class="text">Email or username</div> --}}
+                {{!-- <div >
+                    {{!-- <button class="checkbox">Email or username</button> --}}
+                </div> --}}
 
-                <div class="text">Password</div>
+                {{!-- <div class="text">Password</div> --}}
                     
                 
-                <div >
+                {{!-- <div >
                     <button class="checkbox">Password
                          <div  class="eye"> 
                             <i class="fa-regular fa-eye-slash"></i>
@@ -61,10 +62,10 @@
                         </div>
                     </button>
 
-                </div>
+                </div> --}}
 
                 <div >
-                    <button class="buttonLog">LOGIN</button>
+                    <button class="buttonLog">Or create accout</button>
                 </div>
 
                 <a href="">

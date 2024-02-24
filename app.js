@@ -10,14 +10,14 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 
-
+hbs.registerPartials(__dirname + '/views/partials');
 
 app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', require('./routes/users'));
+app.use('/', require('./routes/user'));
 
 mongoose.connect(process.env.MONGO_URL).then(() => {
     app.listen(PORT, () => {
