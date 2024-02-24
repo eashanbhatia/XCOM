@@ -80,6 +80,13 @@ a{
     margin-left: 200px;
    
 }
+
+.message{
+    color: white;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
 .checkbox  {
     border : 1px solid gray ;
     border-radius: 5px;

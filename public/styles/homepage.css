@@ -1,0 +1,159 @@
+.navbar{
+  
+    display: flex;
+    flex-direction: column;
+ }
+ .container{
+     display: flex;
+ }
+ 
+ .nav-logo img{
+     height: 55px;
+     width: 50px;
+     background-color: white;
+ }
+ .nav-item{
+     
+     font-size: 22px;
+     margin-left: 70px;
+     margin-bottom: 30px;
+     color: black;
+     
+ }
+ 
+ a{
+    text-decoration: none !important;
+ }
+ 
+ .nav-item:hover{
+    background-color: rgb(210, 210, 210);
+ }
+ 
+ .nav-item {
+    border-radius: 50px;
+  }
+ .box-1{
+     width: 25%;
+     height: 900px;
+     background-color: white;
+     align-items: center;
+ 
+ }
+ .nav-item .space{
+     padding-left: 5px;
+     text-decoration: none;
+ }
+ .btn{
+     border: 1px solid rgb(64, 187, 228);
+     border-radius: 50px;
+     background-color: rgb(64, 187, 228);
+     color: white;
+     font-size: medium;
+     height: 45px;
+     width: 150px;
+     margin-left: 66px;
+ }
+ .container-2{
+     /* width: 40%; */
+     border: 1px solid black;
+ }
+ .firstbar{
+     display: flex;
+     justify-content: space-evenly;
+ }
+ .box-2{
+     height: 900px;
+     width: 45%;
+     border: 1px solid black;
+ }
+ .box-2 .firstbar{
+     border-bottom: 1px solid black;
+     height: 50px;
+ 
+ 
+ }
+ .foryou{
+     /* height: 80px; */
+     width: 270px;
+     font-size: medium;
+ }
+ .following{
+     /* height: 80px; */
+     width: 270px;
+     font-size: medium;
+ }
+  .setting{
+     width: 90px;
+     
+ }
+ .setting i{
+     width: 95px;
+     font-size: medium;
+ }
+ .tweet{
+     border: 1px solid black;
+ }
+ .margin-tweet{
+     border: 1px solid black;
+     
+ 
+ }
+ .sub-div{
+     height: 130px;
+     width: 500px;
+     display:flex ;
+     /* margin-left: 3px */
+ }
+ 
+ .sub-div .google-image{
+     width: 60px;
+     border: 1px solid black;
+     
+ }
+ .text{
+     margin-left: 10px;
+     
+ }
+ .writingtxt{
+     font-size: 32px;
+     margin-bottom: 18px;
+ 
+ }
+ .text .ar{
+     width: 520px;
+ }
+ 
+ .sub-div .global{
+     font-size: medium;
+     padding-bottom: 8px;
+     border-bottom:1px solid rgb(184, 181, 181) ;
+    
+    
+ }
+     
+ 
+ .sub-div .global a{
+   text-decoration: none;
+   color: rgb(64, 187, 228);
+   font-weight: 600;
+   /* margin-bottom: 12px;
+   margin-top: 8px; */
+ }
+ .br .reactions{
+     
+     display: flex;
+     justify-content: space-evenly;
+     font-size: larger;
+     color: rgb(64, 187, 228);
+     margin-top: 12px;
+     margin-bottom: 3px;
+ }
+ .br .reactions .submit{
+    background-color: rgb(64, 187, 228);
+    color: white;
+    border: 1px solid rgb(64, 187, 228);
+    border-radius: 50px;
+    height: 25px;
+    width: 65px;
+    /* margin-left: 128px; */
+ }
