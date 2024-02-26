@@ -48,4 +48,6 @@ router.post('/addComment', Controller.addComment);
 
 router.post('/addSave', Controller.addSave);
 
+router.get('/getLike',Controller.getLike)
+
 module.exports = router;
