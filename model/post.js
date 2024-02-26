@@ -18,10 +18,8 @@ const postSchema= new Schema({
         default: Date.now
     },
     likes:[ ],
-    saved:{
-        type: Boolean,
-        default:0
-    },
+    saved:[ ],
+    comments:[ ],
     location:{
         type: String
     },
@@ -30,6 +28,10 @@ const postSchema= new Schema({
         default: 0
     },
     totalsaved:{
+        type: Number,
+        default: 0
+    },
+    totalcomments:{
         type: Number,
         default: 0
     }
