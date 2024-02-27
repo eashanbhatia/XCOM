@@ -13,7 +13,7 @@ passport.use(new GoogleStrategy({
   callbackURL: "http://localhost:4444/auth/google/callback"
 },
   async function (accessToken, refreshToken, profile, cb) {
-    let user = await hackUsers.findOne({ googleId: profile.id });
+    let user = await hackUsers.findOne({ google_id: profile.id });
     try {
       if (user) return cb(null, user);
       user = await hackUsers.create({

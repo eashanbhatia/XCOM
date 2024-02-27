@@ -1,109 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Twitter</title>
-
-    <link rel="stylesheet" href="/styles/homepage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-<body>
+    <link rel="stylesheet" href="/styles/feed.css">
+    <link rel="stylesheet" href="/styles/homepage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div class="container">
-        <div class="box-1">
-            <div class="navbar">
-                
-                <a href="/"><div class="nav-logo nav-item">
-                   <img src="https://1000logos.net/wp-content/uploads/2017/06/Twitter-Log%D0%BE.png" alt="logo">
-                </div></a>
-            
-                <a href="/"><div class="nav-home nav-item">
-                    <i class="fa-solid fa-house"></i>
-                    <span class="space">Home</span>
-                </div></a>
+      <div class="box-1">
+        <div class="navbar">
+          <a href="/"
+            ><div class="nav-logo nav-item">
+              <img
+                src="https://1000logos.net/wp-content/uploads/2017/06/Twitter-Log%D0%BE.png"
+                alt="logo"
+              /></div
+          ></a>
 
-                <a href="/"><div class="nav-search nav-item">
-                <i class="fa-brands fa-searchengin"></i>
-                <span class="space">Explore</span>
-                </div></a>
-            
+          <a href="/"
+            ><div class="nav-home nav-item">
+              <i class="fa-solid fa-house"></i>
+              <span class="space">Home</span>
+            </div></a
+          >
 
-                <a href="/"><div class="nav-notify nav-item">
-                    <i class="fa-solid fa-bell"></i>
-                    <span class="space">  Notifications</span>
-                  
-                </div></a>
-            
-                <a href="/"><div class="nav-addPost nav-item">
-                    <i class="fa-solid fa-plus"></i>
-                    <span class="space"> Add Post</span>
-                   
-                </div></a>
+          <a href="/"
+            ><div class="nav-search nav-item">
+              <i class="fa-brands fa-searchengin"></i>
+              <span class="space">Explore</span>
+            </div></a
+          >
 
+          <a href="/"
+            ><div class="nav-notify nav-item">
+              <i class="fa-solid fa-bell"></i>
+              <span class="space"> Notifications</span>
+            </div></a
+          >
+          <a href="/"
+          ><div class="nav-notify nav-item">
+            <i class="fa-solid fa-message"></i>
+            <span class="space"> Messages</span>
+          </div></a
+        >
+          <a href="/"
+            ><div class="nav-addPost nav-item">
+              <i class="fa-solid fa-plus"></i>
+              <span class="space"> Add Post</span>
+            </div></a
+          >
 
-                <a href="/"><div class="nav-addPost nav-item">
-                    <i class="fa-solid fa-user"></i>
-                    <span class="space">Profile</span>
-                  
-                </div></a>
+          <a href="/"
+            ><div class="nav-addPost nav-item">
+              <i class="fa-solid fa-user"></i>
+              <span class="space">Profile</span>
+            </div></a
+          >
 
-                <button class="btn">Post</button>
+          <button class="btn">Post</button>
+        </div>
+      </div>
+
+      <!-- box-2 -->
+
+      <div class="box-2">
+        <div class="firstbar">
+          <button class="foryou button">For you</button>
+          <button class="following button">Following</button>
+          <button class="setting">
+            <i class="fa-solid fa-gear"></i>
+          </button>
         </div>
 
-        </div>
+        <div class="tweet">
+          <div class="margin-tweet">
+            <div class="sub-div">
+              <div class="google-image"></div>
 
-    
-     <!-- box-2 -->
-        
-   
-
-        <div class="box-2">
-            <div class="firstbar">
-                <button class="foryou  button" >For you</button>
-                <button class="following  button">Following</button>
-                <button class="setting  "> 
-                    <i class="fa-solid fa-gear"></i>
-                </button>
-            </div>
-
-            <div class="tweet">
-                <div class="margin-tweet">
-                    <div class="sub-div">
-                        <div class="google-image"></div>
-                        
-                        <div class="text">
-                            <div class="ar">
-                                <div class="writingtxt">
-                                    What is happening!
-                                </div>
-                                <div class="br">
-                                    <div class="global">
-                                        <a href="#"><i class="fa-solid fa-globe"></i>
-                                            Everyone can apply
-                                        </a>
-                                    </div>
-                                    <div class="reactions">
-                                        <div class="a"><i class="fa-solid fa-image"></i></div>
-                                        <div class="a"><i class="fa-solid fa-square-poll-vertical"></i></div>
-                                        <div class="a"><i class="fa-solid fa-face-smile"></i></div>
-                                        <div class="a"><i class="fa-solid fa-calendar-days"></i></div>
-                                        <div class="a"><i class="fa-solid fa-location-dot"></i></div>
-                                        <button class="submit">Post</button>
-                                    </div>
-
-                                    
-                                </div>
-
-                            </div>
-                        </div>
+              <div class="text">
+                <div class="ar">
+                  <div class="writingtxt">What is happening!</div>
+                  <div class="br">
+                    <div class="global">
+                      <a href="#"
+                        ><i class="fa-solid fa-globe"></i>
+                        Everyone can apply
+                      </a>
                     </div>
+                    <div class="reactions">
+                      <div>
+                        <button class="a">
+                            <input type="file"  id="image" >
+                            <label for="image"> <i class="fa-solid fa-image"></i></label>
+                           
+                         
+                        </button>
+                      </div>
+                      <div class="back-circle">
+                        <button class="a">
+                          <i class="fa-solid fa-square-poll-vertical"></i>
+                        </button>
+                      </div>
+                      <div class="back-circle">
+                        <button class="a">
+                          <i class="fa-solid fa-face-smile"></i>
+                        </button>
+                      </div>
+                      <div  class="back-circle">
+                        <button class="a">
+                          <i class="fa-solid fa-calendar-days"></i>
+                        </button>
+                      </div>
+                      <div>
+                        <button class="a">
+                          <i class="fa-solid fa-location-dot"></i>
+                        </button>
+                      </div>
+                      <div>
+                        <button class="submit">Post</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="main-content">
+            {{#each allPosts as |p|}}
+        {{!-- {{p}} --}}
+        {{!-- {{p.likes}} --}}
+        {{!-- {{userdetails}} --}}
+        {{!-- <if {{p.likes.include(user._id)}}>
+            Hello How are you
+        </if> --}}
+        <div class="container-details">
+            {{!-- <input type="text" name="id" class="{{p._id}}" style="width: 200px;" value="{{p._id}}"> --}}
+            <div class="user-details">
+                <div class="profile-image" style="background-image: url({{p.username.google_img}});">
+                </div>
+                <div class="name-user" id="nameuser">{{p.username.username}} <div class="date">{{p.date}}</div>
+                </div>
             </div>
+
+            <div class="tweet-info">
+                <div class="tweet-text">
+                    {{p.tweet}}
+                </div>
+            </div>
+            {{#if p.image}}
+            <div class="media image" style="background-image: url({{p.image}});">
+            </div>
+            {{/if}}
+            <div class="icon-container">
+                <div class="icon-div love"><button class="icon love">
+                        {{!-- {{#if (p.likes.includes user._id) }} --}}
+                        {{!-- <i onclick="addLike('{{p._id}}')" class="fa-solid fa-heart love"></i> --}}
+                        {{!-- {{else}} --}}
+                        {{#if p.hasLiked}}
+                        <i onclick="addLike('{{p._id}}')" class="fa-solid fa-heart love"></i>
+                        {{else}}
+                        <i onclick="addLike('{{p._id}}')" class="fa-regular fa-heart love"></i>
+
+                        {{/if}}
+                        <span id="{{p._id}}">{{p.totallikes}}</span>
+                    </button>
+                </div>
+                <div class="icon-div comment"><button class="icon comment">
+                    <i onclick="addComment('{{p._id}}')" class="fa-regular fa-comment comment" id="{{p._id}}"></i>
+                    <span id="{{p._id}}">{{p.totalcomments}}</span>
+                    </button>
+                    </div>
+                <div class="icon-div retweet"><button class="icon retweet"><i class="fa-solid fa-retweet retweet"
+                            id="{{p._id}}">
+                        </i></button></div>
+                <div class="icon-div bookmark"><button class="icon bookmark"><i onclick="addSave('{{p._id}}')"
+                            class="fa-regular fa-bookmark bookmark" id="{{p._id}}"></i></button></div>
+                <form action="/addComment" method="POST">
+                    <input type="text" name="postID" class="{{p._id}}" style="width: 200px;" value="{{p._id}}">
+                    <input type="text" placeholder="Add Comment" name="comment">
+                    <button type="submit">Daaldo Comment</button>
+                </form>
+            </div>
+        </div>
+
+
+        {{/each}}
+        </div>
+      </div>
+      <div class="box-3">
+        <div class="search-bar">
+          <div class="search-icon"> <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- <input type="text" placeholder="Search" > -->
+          </div>
+          <div class="input"><input type="text" placeholder="Search" ></div>
+          
+        </div>
+
+        <div class="Premium-box">
+            <div class="heading-1">
+              <div class="prem-a">Subscribe to Premium</div>
+              <div class="prem-b">Subscribe to unlock new features and if eligible, receive a share of ads revenue.</div>
+              <button>Subscribe</button>
+            </div>
+        </div>
+
+        <div class="happening-box">
+           <div class="heading-2"> What’s happening</div>
+           <div class="happen">
+                <div class="happen-a" >Trending in India
+                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                </div>
+                <div class="happen-b">#viralvideo</div>
+                <div class="happen-c"  >60.1K posts</div>
+
+                <div class="happen-a" >Trending in India
+                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                </div>
+                <div class="happen-b">#viralvideo</div>
+                <div class="happen-c"  >60.1K posts</div>
+
+                <div class="happen-a" >Trending in India
+                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                </div>
+                <div class="happen-b">#viralvideo</div>
+                <div class="happen-c"  >60.1K posts</div>
+
+                <div class="happen-a" >Trending in India
+                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                </div>
+                <div class="happen-b">#viralvideo</div>
+                <div class="happen-c"  >60.1K posts</div>
+
+           </div>
+
+           <div class="showmore"><a href="#">Show more</a></div>
 
         </div>
-  
 
-</div>
-</body>
+        <div class="footer">
+          
+          <span class="f-a"><a href="#">Terms of Service</a></span>
+          <span class="f-b"><a href="#">Privacy Policy</a></span>
+          <span class="f-c"><a href="#"> Cookie Policy</a></span>
+          <span class="f-d"><a href="#">Accessibility</a></span>
+          <span class="f-e"><a href="#"> Ads info</a></span>
+          <span class="f-e"><a href="#">  More</a></span>
+          <span class="f-e"> © 2024 X Corp.</span>
+        </div>
+
+      </div>
+
+
+    </div>
+    <script src="/scripts/script.js"></script>
+  </body>
 </html>

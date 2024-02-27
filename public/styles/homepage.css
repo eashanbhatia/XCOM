@@ -21,19 +21,25 @@
      
  }
  
- a{
-    text-decoration: none !important;
- }
- 
  .nav-item:hover{
     background-color: rgb(210, 210, 210);
  }
  
+ 
  .nav-item {
     border-radius: 50px;
+    width: 170px;
+    /* height: 60px; */
+    
+    
   }
+   a{
+    text-decoration: none;
+     
+     
+   }
  .box-1{
-     width: 25%;
+     width: 22%;
      height: 900px;
      background-color: white;
      align-items: center;
@@ -139,6 +145,11 @@
    /* margin-bottom: 12px;
    margin-top: 8px; */
  }
+ .reactions .a input{
+     display: none;
+     cursor: pointer;
+ }
+ 
  .br .reactions{
      
      display: flex;
@@ -146,8 +157,26 @@
      font-size: larger;
      color: rgb(64, 187, 228);
      margin-top: 12px;
-     margin-bottom: 3px;
+ 
+    
  }
+ .br .reactions button{
+     color: rgb(64, 187, 228);
+          margin-bottom: 3px;
+     /* padding: 10px; */
+     border: 0px;
+     border-radius: 100%;
+  
+     font-size: medium;
+     background-color: white;
+     cursor: pointer;
+     width: 25px;
+     height: 25px;
+     align-items: center;
+ 
+ }
+ 
+ 
  .br .reactions .submit{
     background-color: rgb(64, 187, 228);
     color: white;
@@ -155,5 +184,155 @@
     border-radius: 50px;
     height: 25px;
     width: 65px;
-    /* margin-left: 128px; */
+    /* margin-left: 128px; */
  }
+ .box-3{
+     width: 33%;
+     height: 900px;
+ }
+ .box-3 .search-bar{
+     height: 45px;
+     width: 300px;
+     border: 1px solid black;
+     margin-left: 20px;
+     border-radius: 30px;
+     display: flex;
+ }
+ .box-3 .search-icon{
+     width: 30px;
+     height: 50px;
+     /* border: 1px solid black; */
+     margin-left: 15px;
+     
+ }
+ .box-3 .search-bar .icon{
+     margin-left: 1000px;
+ }
+ .box-3 .search-icon i{
+     margin-left: 4px;
+     margin-top: 15px;
+     
+ }
+ 
+ .box-3 .search-bar .input{
+     margin-left: 10px;
+     margin-top: 12px;
+     /* ; */
+     width: 300px;
+     height: 50px;
+     
+ }
+ .box-3 .search-bar .input input{
+     margin-left: 10px;
+     /* margin-top:4px; */
+     /* ; */
+     width: 200px;
+     height: 28px;
+     margin-bottom: 4px;
+     border: none;
+     
+ }
+ .Premium-box{
+      /* border: 1px solid black; */
+      width: 370px;
+      height: 170px;
+      margin-left: 20px   ;
+      margin-top:16px ;
+      border-radius: 20px;
+      background-color: #eff3f4;
+    
+ }
+ 
+ .Premium-box .prem-a{
+     /* border-bottom: 1px solid black; */
+     width: 350px;
+     height: 45px;
+    padding-top: 10px;
+     margin-left: 14px;
+     font-weight: 600;
+     font-size: 22px;
+    
+ }
+ .Premium-box .prem-b{
+     /* border-bottom: 1px solid black; */
+     width: 350px;
+     height: 50px;
+     margin-left: 14px;
+     margin-top: 5px;
+     font-size: 15px;
+   
+ }
+ .Premium-box  button{
+     /* border-bottom: 1px solid black; */
+     width: 120px;
+     height: 40px;
+     border-radius: 50px;
+     margin-left: 14px;
+     background-color: black;
+     color: white;
+     font-size: 15px;
+    
+ }
+ .happening-box{
+     /* border: 1px solid black; */
+     width: 370px;
+     height: 440px;
+     margin-left: 20px   ;
+     margin-top:16px ;
+     border-radius: 20px;
+     background-color: #eff3f4;
+     position: sticky;
+  
+   
+ }
+ .heading-2{
+     /* border-bottom: 1px solid; */
+     font-size: 23px;
+     font-weight: 600;
+     margin-left: 14px;
+     padding-top: 17px;
+     
+ }
+ .happen{
+     margin-top: 30px;
+ }
+ 
+ .happen-a{
+  margin-left: 14px;
+  color: rgb(142, 137, 137);
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+ }
+ 
+ .happen-b{
+     margin-left: 14px;
+    
+    }
+ .happen-c{
+     margin-left: 14px;
+     color: rgb(142, 137, 137);
+     margin-bottom: 20px;
+     
+  }
+  .showmore a{
+    text-decoration: none;
+    font-size: large;
+    margin-left: 16px;
+    color: rgb(64, 187, 228);
+  }
+  .footer{
+     /* display: flex; */
+     /* border: 1px solid black; */
+    
+     height: 50px;
+     width: 350px;
+     margin-left: 23px;
+     margin-top: 20px;
+    
+  }
+  .footer a{
+     padding-left: 9px;
+     padding-bottom: 17px;
+     color: #515354;
+}

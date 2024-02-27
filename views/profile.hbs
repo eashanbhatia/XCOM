@@ -4,15 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+        <link rel="stylesheet" href="/styles/feed.css">
 </head>
 <body>
     
     <h1>Profile Page</h1>
     {{!-- {{user}} --}}
+    {{!-- {{user._id}} --}}
+    {{!-- {{userPosts}} --}}
 
     Image: <img src={{user.google_img}} alt="Google Image"> <br>
     Name: {{user.username}} <br>
     Google Access Token: {{user.google_accessToken}}  <br>
+
+
+    {{#each userPosts as |p|}}
+        {{!-- {{p}} --}}
+        {{!-- {{p.likes}} --}}
+        {{!-- {{userdetails}} --}}
+        {{!-- <if {{p.likes.include(user._id)}}>
+            Hello How are you
+        </if> --}}
+        <div class="container">
+            {{!-- <input type="text" name="id" class="{{p._id}}" style="width: 200px;" value="{{p._id}}"> --}}
+            <div class="user-details">
+                <div class="profile-image" style="background-image: url({{p.username.google_img}});">
+                </div>
+                <div class="name-user" id="nameuser">{{p.username.username}} <div class="date">{{p.date}}</div>
+                </div>
+            </div>
+
+            <div class="tweet-info">
+                <div class="tweet-text">
+                    {{p.tweet}}
+                </div>
+            </div>
+            {{#if p.image}}
+            <div class="media image" style="background-image: url({{p.image}});">
+            </div>
+            {{/if}}
+            
+
+
+        {{/each}}
 
     <br>
     {{#if isLoggedIn}}

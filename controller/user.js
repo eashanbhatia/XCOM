@@ -24,13 +24,40 @@ module.exports.getIndex = (req, res, next) => {
     });
 }
 
-module.exports.getProfile = (req, res, next) => {
+module.exports.getProfile = async (req, res, next) => {
     if (!req.user) return res.redirect('/');
+    let user = req.user;
+    console.log(user);
+    let userPosts = await hackPosts.find({username:user._id});
+    
+    // let newPost = await hackPosts.find({}).populate('username');
+    // console.log(newPost)
+    // let userPosts =  $filter:
+    // const query = hackPosts.find({ username: 'user._id' });
+    // // console.log(query);
+    // query.getFilter();
+    // let profilePost= await hackPosts.find().populate('user');
+        
+
+    
+
     res.render('profile', {
         user: req.user,
-        isLoggedIn: req.user ? true : false
+        isLoggedIn: req.user ? true : false,
+        userPosts
     });
 }
+
+// {
+//     if (!req.user) {
+//       res.redirect("/login");
+//     } else {
+//       let photoes = await photo.find().populate('user');
+//       res.render("home", {
+//         photoes,
+//       });
+//     }
+//   };
 
 module.exports.getLogOut = (req, res, next) => {
     req.logout(() => {
@@ -77,12 +104,37 @@ module.exports.postSignUp = async (req, res, next) => {
 
 module.exports.postSignIn = (req, res, next) => {
     // console.log(req)    
+    
     res.redirect('/homepage');
 
 }
 
-module.exports.getHomePage = (req, res, next) => {
-    res.render('homepage')
+module.exports.getHomePage = async (req, res, next) => {
+    let userdetails = req.user;
+    // console.log(userdetails._id)
+    let newPost = await hackPosts.find({}).populate('username');
+    let allPosts = newPost.map((post)=> {
+        post  = post.toObject()
+        let temp = post.likes.filter((v)=>{
+            console.log(v._id, userdetails._id)
+            if(v._id.equals(userdetails._id)){
+                return true ;
+            }
+            else{
+                return false;
+            }
+        })
+        console.log(temp)
+        if(temp && temp.length > 0)
+        {
+            return {...post,hasLiked:true}
+        }
+        else{
+            return {...post,hasLiked:false}
+        }
+    })
+    console.log(allPosts)
+    res.render('homepage',{ allPosts, userdetails })
 }
 
 
