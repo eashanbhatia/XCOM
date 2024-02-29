@@ -28,7 +28,7 @@ module.exports.getProfile = async (req, res, next) => {
     if (!req.user) return res.redirect('/');
     let user = req.user;
     console.log(user);
-    let userPosts = await hackPosts.find({username:user._id});
+    let userPosts = await hackPosts.find({username:user._id});   //filter lgaya hai ye mongoose ka
     
     // let newPost = await hackPosts.find({}).populate('username');
     // console.log(newPost)
@@ -111,30 +111,35 @@ module.exports.postSignIn = (req, res, next) => {
 
 module.exports.getHomePage = async (req, res, next) => {
     let userdetails = req.user;
-    // console.log(userdetails._id)
-    let newPost = await hackPosts.find({}).populate('username');
-    let allPosts = newPost.map((post)=> {
-        post  = post.toObject()
-        let temp = post.likes.filter((v)=>{
-            console.log(v._id, userdetails._id)
-            if(v._id.equals(userdetails._id)){
-                return true ;
-            }
-            else{
-                return false;
-            }
-        })
-        console.log(temp)
-        if(temp && temp.length > 0)
-        {
-            return {...post,hasLiked:true}
-        }
-        else{
-            return {...post,hasLiked:false}
-        }
-    })
+    console.log("userdetails:",userdetails)
+    console.log(userdetails.likedPosts)
+    let allPosts = await hackPosts.find({}).populate('username');
     console.log(allPosts)
-    res.render('homepage',{ allPosts, userdetails })
+    // console.log(userdetails._id)
+    // let newPost = await hackPosts.find({}).populate('username');
+    // let allPosts = newPost.map((post)=> {
+    //     post  = post.toObject()
+    //     let temp = post.likes.filter((v)=>{
+    //         console.log(v._id, userdetails._id)
+    //         if(v._id.equals(userdetails._id)){
+    //             return true ;
+    //         }
+    //         else{
+    //             return false;
+    //         }
+    //     })
+    //     console.log(temp)
+    //     if(temp && temp.length > 0)
+    //     {
+    //         return {...post,hasLiked:true}
+    //     }
+    //     else{
+    //         return {...post,hasLiked:false}
+    //     }
+    // })
+    // console.log(allPosts)
+    // res.render('homepage',{ allPosts, userdetails })
+    res.render('homepage',{allPosts,userdetails})
 }
 
 
@@ -148,7 +153,7 @@ module.exports.postAddTweet = async (req, res, next) => {
                 tweet: tweet
             });
 
-            return res.redirect('/feed');
+            return res.redirect('/homepage');
         } catch (err) {
             console.log(err);
             // Handle the error appropriately
@@ -166,7 +171,7 @@ module.exports.postAddTweet = async (req, res, next) => {
                     image: result.url,
                     tweet: tweet
                 });
-                return res.redirect('/feed');
+                return res.redirect('/homepage');
             });
 
         }
@@ -235,10 +240,16 @@ module.exports.addLike = async (req, res, next) => {
     if (!likedUsers) {
         Post.likes.push(userId);
         Post.totallikes++;
-        // console.log(Post)
         Post.save();
+        // user.socialMediaHandles.set('github', 'vkarpov15');
+        // hackUsers.likedPosts.set('postId','true');
+        // hackUsers.save();
+        // console.log(Post)
+        let user = await hackUsers.findById(userId._id);
+        user.likedPosts.set(postId, true);
+        user.save();
         res.json({ data: 'inc' });
-        let allPosts = await hackPosts.find({}).populate('username');
+        // let allPosts = await hackPosts.find({}).populate('username');
 
         // console.log(allPosts);
  
@@ -250,6 +261,11 @@ module.exports.addLike = async (req, res, next) => {
         // Post.likes.pull(userId)
         Post.totallikes--;
         Post.save();
+
+        let user = await hackUsers.findById(userId._id);
+        user.likedPosts.delete(postId);
+        user.save();
+
         console.log("ghata dia");
         console.log(Post);
         res.json({ data: 'dec' });
@@ -278,41 +294,94 @@ module.exports.addComment = async (req, res, next) => {
 
 }
 
+// module.exports.addSave = async (req, res, next) => {
+//     // console.log(req.body)
+//     let { postId } = req.body;
+//     let userId = req.user;
+//     // console.log(postId)
+//     // console.log("userId", userId._id.toString())
+//     let Post = await hackPosts.findOne({ _id: postId });
+//     // console.log(Post.likes);
+//     // console.log(Post.likes[0]._id.toString()==userId)
+//     let likedUsers = Post.likes.find(element => element._id.toString() === userId._id.toString());
+//     // let likedUsers = await hackPosts.find({ _id:postId });
+//     // console.log(Post);
+//     console.log("likedUsers:", likedUsers);
+//     if (!likedUsers) {
+//         Post.likes.push(userId);
+//         Post.totallikes++;
+//         // console.log(Post)
+//         Post.save();
+//         res.json({ data: 'done' })
+//         console.log("badha dia");
+//         console.log(Post);
+//     }
+//     else {
+//         Post.likes = Post.likes.filter(element => element._id.toString() !== userId._id.toString());
+//         Post.totallikes--;
+//         Post.save();
+//         console.log("ghata dia");
+//         console.log(Post);
+//     }
+// }
+
 module.exports.addSave = async (req, res, next) => {
     // console.log(req.body)
     let { postId } = req.body;
     let userId = req.user;
-    // console.log(postId)
-    // console.log("userId", userId._id.toString())
+
     let Post = await hackPosts.findOne({ _id: postId });
-    // console.log(Post.likes);
-    // console.log(Post.likes[0]._id.toString()==userId)
-    let likedUsers = Post.likes.find(element => element._id.toString() === userId._id.toString());
+    console.log(Post);
+    let savedUsers = Post.saved.find(element => element._id.toString() === userId._id.toString());
     // let likedUsers = await hackPosts.find({ _id:postId });
     // console.log(Post);
-    console.log("likedUsers:", likedUsers);
-    if (!likedUsers) {
-        Post.likes.push(userId);
-        Post.totallikes++;
+    // console.log("likedUsers:", likedUsers);
+    if (!savedUsers) {
+        Post.saved.push(userId);
+        console.log(Post);
+        Post.totalsaved++;
         // console.log(Post)
         Post.save();
-        res.json({ data: 'done' })
+        res.json({ data: 'inc' });  
         console.log("badha dia");
         console.log(Post);
     }
     else {
-        Post.likes = Post.likes.filter(element => element._id.toString() !== userId._id.toString());
-        Post.totallikes--;
+        // Post.likes = Post.likes.filter(element => element._id.toString() !== userId._id.toString()); very jainwin logic
+        Post.saved.pull(userId)
+        Post.totalsaved--;
         Post.save();
         console.log("ghata dia");
         console.log(Post);
+        res.json({ data: 'dec' });
     }
+    // console.log(likedUsers);
+    // console.log(Post)
+    // console.log(Post.likes)
 }
 
-
-module.exports.getLike = async (req,res,next)=>{
-    let Post = await hackPosts.findOne({ _id: postId });
-    let likes = Post.totallikes;
-    res.send(likes);
+// module.exports.getLike = async (req,res,next)=>{
+//     let Post = await hackPosts.findOne({ _id: postId });
+//     let likes = Post.totallikes;
+//     res.send(likes);
     
+// }
+
+
+
+
+
+module.exports.getTrending = async (req,res,next) =>{
+    let trendingPosts = await hackPosts.find().sort({totallikes:-1});
+    res.render('trending',{trendingPosts})
+}
+
+module.exports.deleteTweet = async (req,res,next) =>{
+    let {pid} = req.query;
+    console.log(pid)
+    let tweetDel = await hackPosts.findOne({_id:pid});
+    await tweetDel.deleteOne();
+
+    return res.redirect('/profile')
+
 }

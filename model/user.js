@@ -3,13 +3,18 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema({
     username: {
-        type:String,
-        required:true
+        type: String,
+        required: true
     },
-    password:String,
+    password: String,
     google_accessToken: String,
     google_img: String,
-    google_id: String
-  });
+    google_id: String,
+    likedPosts: {
+        type: Map,
+        of: Boolean,
+        default:{}
+    }
+});
 
-  module.exports = mongoose.model('hackUsers',userSchema);  //Collection name "hackUsers" mein jaakr save hoga data
+module.exports = mongoose.model('hackUsers', userSchema);  //Collection name "hackUsers" mein jaakr save hoga data

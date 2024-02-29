@@ -48,6 +48,10 @@ router.post('/addComment', Controller.addComment);
 
 router.post('/addSave', Controller.addSave);
 
-router.get('/getLike',Controller.getLike)
+// router.get('/getLike',Controller.getLike)
+
+router.get('/trending',Controller.getTrending);
+
+router.get('/deleteTweet',Controller.deleteTweet);
 
 module.exports = router;
