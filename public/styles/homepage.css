@@ -2,34 +2,55 @@
   
     display: flex;
     flex-direction: column;
+    
  }
  .container{
      display: flex;
  }
  
+ .nav-logo{
+    display: flex;
+    justify-content: center;
+ }
  .nav-logo img{
      height: 55px;
      width: 50px;
-     background-color: white;
+     background-color: transparent;
  }
+
+ .homepage,.trending,.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    margin: 15px 0px;
+ }
+
+ a:visited{
+    color: rgba(223,248,175,0.9);
+ }
+
  .nav-item{
      
      font-size: 22px;
-     margin-left: 70px;
-     margin-bottom: 30px;
-     color: black;
+     color: #769453 !important;
+     /* background-color: ; */
      
  }
  
  .nav-item:hover{
-    background-color: rgb(210, 210, 210);
+    background-color:rgb(223,248,175,0.9);
  }
- 
+
+
  
  .nav-item {
     border-radius: 50px;
-    width: 170px;
-    /* height: 60px; */
+    width: 121px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     
   }
@@ -40,9 +61,11 @@
    }
  .box-1{
      width: 22%;
-     height: 900px;
-     background-color: white;
+     height: 642px;
+ 
      align-items: center;
+     position: fixed;
+     left: 0;
  
  }
  .nav-item .space{
@@ -69,9 +92,21 @@
  }
  .box-2{
      height: 900px;
-     width: 45%;
-     border: 1px solid black;
+     width: 46%;
+     margin-left: 260px;
+     
  }
+
+.fixed-box{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.inputicon{
+    font-size: 32px;
+}
+
  .box-2 .firstbar{
      border-bottom: 1px solid black;
      height: 50px;
@@ -97,7 +132,11 @@
      font-size: medium;
  }
  .tweet{
-     border: 1px solid black;
+    box-shadow: 0px 5px 5px grey;
+    border: 2px solid #769453;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 5px;
  }
  .margin-tweet{
      border: 1px solid black;
@@ -117,6 +156,10 @@
      margin-left: 80px;
      
  }
+
+ /* .main-content{
+    background-color: #edf6f9;
+ } */
  .text{
      margin-left: 10px;
      
@@ -185,20 +228,55 @@
     height: 30px;
 }
 
+.custom-file-input input {
+    position: absolute;
+    font-size: 100px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+
+.file-label {
+    position: relative;
+    display: inline-block;
+    /* background-color: rgb(64, 187, 228); */
+    color: white;
+    /* border: 1px solid rgb(64, 187, 228); */
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+}
+
+.file-label i {
+    font-size: 27px;
+}
+
+.submit {
+    background-color: rgb(64, 187, 228);
+    color: white;
+    border: 1px solid rgb(64, 187, 228);
+    border-radius: 50px;
+    height: 30px;
+    width: 65px;
+    cursor: pointer;
+    margin-left: 400px; /* Adjust margin as needed */
+}
+
 .file-label {
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background-color: white; /* Customize the background color */
     color: rgb(64, 187, 228); /* Customize the text color */
     width: 100%;
     height: 100%;
 }
 
 .icon{
-    font-size: 32px;
+    font-size: 20px;
 }
 
 /* Hide the default file input */
@@ -206,15 +284,7 @@
     display: none;
 }
 
-.submit{
-    background-color: rgb(64, 187, 228);
-    color: white;
-    border: 1px solid rgb(64, 187, 228);
-    border-radius: 50px;
-    height: 25px;
-    width: 65px;
-    cursor: pointer;
-}
+
 
  
  .br .reactions .submit{
@@ -229,6 +299,8 @@
  .box-3{
      width: 33%;
      height: 900px;
+     position: fixed;
+     right: 0;
  }
  .box-3 .search-bar{
      height: 45px;
@@ -279,7 +351,7 @@
       margin-left: 20px   ;
       margin-top:16px ;
       border-radius: 20px;
-      background-color: #eff3f4;
+      background-color: #b3c89a;
     
  }
  
@@ -308,10 +380,19 @@
      height: 40px;
      border-radius: 50px;
      margin-left: 14px;
-     background-color: black;
-     color: white;
+     color: rgba(223,248,175,0.9);
+     background-color: #769453;
      font-size: 15px;
     
+ }
+ .nav-box{
+    width: 230px;
+    height: 635px;
+    margin-left: 7px;
+    margin-top: 5px;
+    border-radius: 20px;
+    background-color: #b3c89a;
+    position: sticky;
  }
  .happening-box{
      /* border: 1px solid black; */
@@ -320,7 +401,7 @@
      margin-left: 20px   ;
      margin-top:16px ;
      border-radius: 20px;
-     background-color: #eff3f4;
+     background-color: #b3c89a;
      position: sticky;
   
    
@@ -339,7 +420,7 @@
  
  .happen-a{
   margin-left: 14px;
-  color: rgb(142, 137, 137);
+  color: beige;
   display: flex;
   justify-content: space-between;
   margin-right: 30px;
@@ -347,11 +428,12 @@
  
  .happen-b{
      margin-left: 14px;
+     color: black;
     
     }
  .happen-c{
      margin-left: 14px;
-     color: rgb(142, 137, 137);
+     color: rgb(27 2 2);
      margin-bottom: 20px;
      
   }
@@ -359,7 +441,7 @@
     text-decoration: none;
     font-size: large;
     margin-left: 16px;
-    color: rgb(64, 187, 228);
+    color: white;
   }
   .footer{
      /* display: flex; */
@@ -392,14 +474,21 @@
 .add-tweet-form a div{
     margin-top: 5px;
 }
+
+.newcomment{
+    color: black;
+}
 .input-tweet{
     height: 70px;
-    width: 485px;
+    width: 475px;
     /* margin: auto; */
-    border: 1px solid red;
+    border: none;
     outline: none;
-    padding-left: 10px;
+    outline: none;
+    padding-left: 20px;
+    padding-top: 20px;
     resize: none;
+    
     /* word-wrap: break-word; */
     /* white-space: pre-wrap; */
     /* white-space: nowrap;
@@ -412,4 +501,71 @@
 
 *:focus {
     outline: none;
+}
+
+
+/*Modal*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 200px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  /* loader */
+  #loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px; /* Adjust based on half of the loader height */
+    margin-left: -15px; /* Adjust based on half of the loader width */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
 }

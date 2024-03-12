@@ -2,11 +2,15 @@
     margin: 0;
     padding: 0;
     font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
+    color: black;
 }
 
 html { overflow-y: scroll; }
 
+body{
+    /* background-color:#003049; */
+    /* background-color: #edf6f9; */
+}
 .main-container{
     border: 5px solid black;
     /* height: 900px; */
@@ -26,9 +30,13 @@ html { overflow-y: scroll; }
 
 .container-details{
     display: flex;
+    color: black;
     flex-direction: column;
     margin-top: 10px;
     margin-bottom: 35px;
+    box-shadow: 0px 5px 5px grey;
+    border: 2px solid #769453;
+    border-radius: 30px;
     /* border: 2px solid grey; */
 }
 .profile-image{
@@ -50,8 +58,10 @@ html { overflow-y: scroll; }
     flex-direction: row;
     justify-content: space-evenly;
     width: 300px;
-    margin-left: 97px;
+    width: auto;
     margin-top: 10px;
+    padding-bottom: 10px;
+    /* background-color: #ccd5ae; */
 }
 
 .icon{
@@ -101,20 +111,27 @@ html { overflow-y: scroll; }
     flex-direction: row;
     margin-left: 30px;
     width: 565px;
+    padding-top: 10px;
 }
 
 .media{
-    height: 300px;
-    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
-    margin-left: 97px;
     margin-top: 20px;
     
 }
+
+.media img{
+    max-width: 300px;
+    border-radius: 20px;
+ }
+ 
 /* .media .image{
     height: 300px;
     width: 300px;

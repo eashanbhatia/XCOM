@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <link rel="stylesheet" href="/styles/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="container-1">
-            <div class="nav-bar">
-                <div class="logo">
-                    <a href="/">
-                           <img src="https://clipartcraft.com/images/x-transparent-logo-3.png" alt="Logo">
-                    </a>
-                </div>
+        {{!-- <div class="nav-bar">
+            <div class="logo">
+                <a href="/">
+                    <img src="https://clipartcraft.com/images/x-transparent-logo-3.png" alt="Logo">
+                </a>
             </div>
+        </div> --}}
+        <div class="main-box">
+            <div class="d-image">
 
+            </div>
+        </div>
 
-            <div class="midbox">
-                <h3 class="message">{{msg}}</h3>
-                <div class="login">Sign Up for X</div>                
-                <form action="/signup" method="POST">
+        <div class="midbox">
+            <h3 class="message">{{msg}}</h3>
+            <div class="login">Sign Up for X</div>
+            <form action="/signup" method="POST">
                 <div class="line"></div>
                 <div class="text">Username</div>
-                <div >
+                <div>
                     <input class="checkbox" type="text" placeholder="Enter Username" name="username"></input>
                 </div>
 
                 <div class="text">Password</div>
-                <div >
+                <div>
                     <input class="checkbox" type="password" placeholder="Enter Password" name="password"></input>
                 </div>
 
-                <div >
+                <div>
                     <button type="submit" class="buttonLog">SIGN UP</button>
                 </div>
 
                 <a href="#">
-                   <div class="forget">Forgot your password?</div>
-                </a> 
-               <div class="line2"></div>
+                    <div class="forget">Forgot your password?</div>
+                </a>
+                <div class="line2"></div>
+            </form>
+                <button class="btn" type="submit">
+                    <a href="/auth/google">
+                        <i class="fa-brands fa-google"></i> &nbsp;
+                        Continue with Google
+                    </a>
+                </button>
+                <div class="have-acc">
+                        Already a user? &nbsp;
+                        <a href="/">
+                            <span class="signupnow"> Login In </span>
+                        </a>
 
-                </form>
-            </div>
-
+                    </div>
         </div>
+
+    </div>
 </body>
+
 </html>

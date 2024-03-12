@@ -1,0 +1,219 @@
+body{
+    background-color: rgb(23, 23, 23);
+}
+.container-1{
+    width: 100%;
+    height: 900px;
+    background-color: rgb(23, 23, 23);
+    margin: 0%;
+}
+
+a{
+    text-decoration: none;
+    color: #1fdf64;
+    text-decoration: none !important;
+}
+
+.container-1 .nav-bar{
+    background-color: rgb(9, 9, 9);
+    height: 100px;
+    width: 100%;
+
+}
+
+.nav-bar .logo img{
+    margin-top: 25px;
+    margin-left: 33px;
+    width: 59px;
+}
+.midbox{
+    background-color: rgb(9, 9, 9);
+    height: 635px;
+    width: 55%;
+    border: 1px solid rgb(34, 34, 34);
+    border-radius: 7px;
+    margin-left:280px ;
+    margin-top: 40px;
+
+}
+.midbox .login{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: white;
+}
+.midbox .btn img{
+    height: 25px;
+    /* width: 30px; */
+    margin-top: 10px;
+    margin-right: 8px;
+   
+}
+.midbox .btn{
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 50px;
+    color: white;
+    margin-bottom: 15px;
+    margin-left: 175px;
+    font-size: 15px;
+    font-weight: 700;
+    height: 50px;
+    width: 340px;
+    
+   
+
+}
+.midbox .line{
+   border-top: 1px solid rgb(71, 71, 71);
+   margin-left: 70px;
+   margin-right: 70px;
+    
+}
+
+.text{
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 200px;
+   
+}
+
+.message{
+    color: white;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
+.checkbox  {
+    border : 1px solid gray ;
+    border-radius: 5px;
+    height: 45px;
+    width: 300px;
+    /* text-align: left; */
+    margin-left: 200px;
+    background-color: rgb(26, 26, 26);
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+input{
+    align-items:center;
+ }
+
+.midbox .buttonLog{
+ border:  1 px solid #1fdf64;
+ border-radius: 50px;
+ background-color: #1fdf64;
+ height: 55px;
+ width: 310px;
+ margin-top: 50px;
+ margin-left: 200px;
+}
+.midbox .forget{
+    color: white;
+    text-decoration:underline;
+    margin-top:30px ;
+    margin-left: 280px;
+
+}
+
+.signupnow{
+    text-decoration:underline;
+}
+.midbox .line2{
+    border-top: 1px solid rgb(84, 84, 84);
+    margin-top: 20px;
+    margin-left: 70px;
+    margin-right: 70px;
+
+}
+.no-acc{
+    color: white;
+    margin-top: 40px;
+    margin-left: 230px;
+}
+.no-acc a{
+    color: white;
+    
+}
+.foot-4{
+    height: 90px;
+}
+.last-section{
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 561px;
+    background-color: black;
+}
+.last-section{
+    display: flex;
+    color: rgb(73, 73, 73);
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+}
+.first{
+    width: 55%;
+    padding-left: 18%;
+    justify-content: right;
+}
+.second{
+    width: 25%;
+    justify-content: right;
+}
+.second i{
+    padding: 5px;
+}
+.second input{
+    color: green;
+    width: 70px;
+    height: 5px;
+    margin-bottom: 5px;
+}
+.a{
+    color: rgb(35, 35, 35);
+}
+.first-1{
+    font-size: 25px;  
+}
+.first-1 i{
+    padding: 10px;
+}
+.b{
+    font-size: 32px;
+}
+.b:hover{
+    font-size: 35px;
+}
+.first-2 {
+    width: 100%;
+    background-color: rgb(73, 73, 73);
+    height: 4px;
+    width: 500px;
+    margin-left: 10%;
+}
+.div{
+    background-color: white;
+    height: 4px;
+    width: 0;
+}
+/* .first-2 input[type="range"] {
+    background-color: rgb(73, 73, 73);
+    border-radius: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%;
+    cursor: pointer;
+    outline: none;
+    height: 4px;
+    overflow: hidden;
+    border-radius: 16px;
+    color: white;
+} */
+

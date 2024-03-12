@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const isLoggedIn = require('../middleware/isLoggedIn')
 const hackUsers = require('../model/user')
 const hackPosts = require('../model/post')
+const hackComments = require('../model/comment')
 const bcrypt = require('bcrypt')
 const Passport = require('../passport/passport');
 const cloudinary = require('cloudinary').v2
@@ -18,7 +19,7 @@ cloudinary.config({
 hackUsers
 
 module.exports.getIndex = (req, res, next) => {
-    if (req.user) return res.redirect('profile')
+    if (req.user) return res.redirect('/homepage')
     res.render('index', {
         isLoggedIn: req.user ? true : false
     });
@@ -27,9 +28,9 @@ module.exports.getIndex = (req, res, next) => {
 module.exports.getProfile = async (req, res, next) => {
     if (!req.user) return res.redirect('/');
     let user = req.user;
-    console.log(user);
-    let userPosts = await hackPosts.find({username:user._id});   //filter lgaya hai ye mongoose ka
-    
+    // console.log(user);
+    let userPosts = await hackPosts.find({username:user._id}).populate('username');   //filter lgaya hai ye mongoose ka
+    console.log("userposts:",userPosts)
     // let newPost = await hackPosts.find({}).populate('username');
     // console.log(newPost)
     // let userPosts =  $filter:
@@ -108,13 +109,37 @@ module.exports.postSignIn = (req, res, next) => {
     res.redirect('/homepage');
 
 }
+// module.exports.getHomePage = async (req, res, next) => {
+//     try {
+//         let userdetails = req.user;
+
+//         // Assuming 'page' is the parameter for pagination
+//         let page = req.query.page || 1;
+//         let postsPerPage = 3;
+
+//         let allPosts = await hackPosts.find({})
+//             .populate('username')
+//             .skip((page - 1) * postsPerPage)
+//             .limit(postsPerPage);
+
+//         let allComments = await hackComments.find({});
+//         console.log("allComments", allComments);
+
+//         res.render('homepage', { allPosts, userdetails, allComments });
+//     } catch (error) {
+//         console.error("Error fetching posts:", error);
+//         res.status(500).send("Internal Server Error");
+//     }
+// }
 
 module.exports.getHomePage = async (req, res, next) => {
     let userdetails = req.user;
-    console.log("userdetails:",userdetails)
-    console.log(userdetails.likedPosts)
+    // console.log("userdetails:",userdetails)
+    // console.log(userdetails.likedPosts)
     let allPosts = await hackPosts.find({}).populate('username');
-    console.log(allPosts)
+    let allComments = await hackComments.find({});
+    console.log("allComments",allComments)
+    // console.log(allPosts)
     // console.log(userdetails._id)
     // let newPost = await hackPosts.find({}).populate('username');
     // let allPosts = newPost.map((post)=> {
@@ -139,7 +164,7 @@ module.exports.getHomePage = async (req, res, next) => {
     // })
     // console.log(allPosts)
     // res.render('homepage',{ allPosts, userdetails })
-    res.render('homepage',{allPosts,userdetails})
+    res.render('homepage',{allPosts,userdetails,allComments})
 }
 
 
@@ -277,15 +302,23 @@ module.exports.addLike = async (req, res, next) => {
 
 
 module.exports.addComment = async (req, res, next) => {
-    // console.log(req.body)
+    console.log(req.body)
     let {comment,postID} = req.body;
+    let user= req.user;
     let Post = await hackPosts.findOne({ _id: postID });
     // console.log(Post)
-    Post.comments.push(comment);
+
+    let newComment = await hackComments.create({
+        post_id: postID,
+        user_id: user,
+        comments:comment
+    })
+    console.log(newComment)
+    // Post.comments.push(comment);
     Post.totalcomments++;
     Post.save();
     console.log(Post)
-    res.redirect('/feed')
+    res.redirect('/homepage')
     // console.log(comment);
 
     // let { postId } = req.body;
@@ -372,8 +405,9 @@ module.exports.addSave = async (req, res, next) => {
 
 
 module.exports.getTrending = async (req,res,next) =>{
-    let trendingPosts = await hackPosts.find().sort({totallikes:-1});
-    res.render('trending',{trendingPosts})
+    let trendingPosts = await hackPosts.find().sort({totallikes:-1}).populate('username');
+    let user = req.user;
+    res.render('trending',{trendingPosts,user})
 }
 
 module.exports.deleteTweet = async (req,res,next) =>{
@@ -383,5 +417,19 @@ module.exports.deleteTweet = async (req,res,next) =>{
     await tweetDel.deleteOne();
 
     return res.redirect('/profile')
+
+}
+
+module.exports.getPayment = (req,res,next) => {
+    res.render('payment')
+}
+
+module.exports.getPostComment = async (req,res,next) => {
+    let {pid} = req.query;
+    console.log("controller ki id:",pid);
+    let postComments = await hackComments.find({post_id:pid}).populate('user_id');
+    console.log("ye rhi:",postComments);
+    return res.render('comments',{postComments,pid})
+    
 
 }

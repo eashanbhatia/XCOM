@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/comments.css">
+    <script src="/scripts/script1.js"></script>
+</head>
+
+<body>
+    <div id="comments-container">
+        <h1>Post Comments</h1>
+        {{!-- {{pid}} pid backend se hee mangwali --}}
+        {{!-- {{postComments}} --}}
+        {{#each postComments as |p|}}
+        <div class="comment">
+            <img class="user-img" src="{{p.user_id.google_img}}" alt="">
+            <div class="user-details">
+                <p>{{p.user_id.username}}</p>
+                <p class="timestamp">{{p.createdAt}}</p>
+                <p>{{p.comments}}</p>
+                {{!-- <p>{{p.post_id}}</p> --}}
+
+            </div>
+
+
+        </div>
+        {{/each}}
+        <form action="/addComment" method="POST">
+            <input type="hidden" name="postID" value="{{pid}}">
+            <input type="text" placeholder="Add Comment" name="comment">
+            <button type="submit">Daaldo Comment</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -54,4 +54,8 @@ router.get('/trending',Controller.getTrending);
 
 router.get('/deleteTweet',Controller.deleteTweet);
 
+router.get('/payment',Controller.getPayment);
+
+router.get('/getPostComment',Controller.getPostComment);
+
 module.exports = router;

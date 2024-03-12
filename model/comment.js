@@ -7,6 +7,12 @@ const commentSchema= new Schema({
         required: true,
         ref: 'hackUsers'
     },
-})
+    post_id:{
+        type: Schema.ObjectId,
+        required: true,
+        ref: 'hackPosts'
+    },
+    comments: String,
+},{timestamps: true});
 
-module.exports = mongoose.model
+module.exports = mongoose.model('hackComments',commentSchema);
