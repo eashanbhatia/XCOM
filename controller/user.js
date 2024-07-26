@@ -109,28 +109,7 @@ module.exports.postSignIn = (req, res, next) => {
     res.redirect('/homepage');
 
 }
-// module.exports.getHomePage = async (req, res, next) => {
-//     try {
-//         let userdetails = req.user;
 
-//         // Assuming 'page' is the parameter for pagination
-//         let page = req.query.page || 1;
-//         let postsPerPage = 3;
-
-//         let allPosts = await hackPosts.find({})
-//             .populate('username')
-//             .skip((page - 1) * postsPerPage)
-//             .limit(postsPerPage);
-
-//         let allComments = await hackComments.find({});
-//         console.log("allComments", allComments);
-
-//         res.render('homepage', { allPosts, userdetails, allComments });
-//     } catch (error) {
-//         console.error("Error fetching posts:", error);
-//         res.status(500).send("Internal Server Error");
-//     }
-// }
 
 module.exports.getHomePage = async (req, res, next) => {
     let userdetails = req.user;
@@ -235,12 +214,6 @@ module.exports.getFeed = async (req, res, next) => {
         }
     })
     console.log(allPosts)
-    // console.log(req.user);
-
-
-    // console.log(userdetails)
-    // console.log(user)
-    // console.log(allPosts);
     res.render('feed', { allPosts, userdetails });
 }
 
@@ -295,9 +268,7 @@ module.exports.addLike = async (req, res, next) => {
         console.log(Post);
         res.json({ data: 'dec' });
     }
-    // console.log(likedUsers);
-    // console.log(Post)
-    // console.log(Post.likes)
+
 }
 
 
